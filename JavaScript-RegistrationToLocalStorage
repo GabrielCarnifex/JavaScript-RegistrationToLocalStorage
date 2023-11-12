@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+
+<title>Register</title>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="plstyle.css">
+
+    <link rel="shortcut icon" type="image/x-icon" href="plicon.png">
+</head>
+
+<body>
+
+<div class="regform" id="regf">
+    <p><h2>Please enter your details</p></h2>
+
+    <p><input type="text" id="fname" placeholder="First Name"></p>
+
+    <p><input type="text" id="sname" placeholder="Surname"></p>
+
+    <p><input type="text" id="email" placeholder="Email Address"></p>
+
+    <p><input type="text" id="passw" placeholder="Choose Password"></p>
+</div>
+
+<div class="yesorno" id="yesno">
+    <p><h2>Subscribe to our newsletter</h2></p>
+
+    <input type="checkbox" id="choose" name="a">
+    <label for="a">Yes</label>
+    <input type="checkbox" id="choose" name="b">
+    <label for="b">No</label>
+
+            <p><button id="regbutton">
+                <script>
+
+                document.getElementById('regbutton').addEventListener('click', function() 
+                
+                {
+
+                    var firstName = document.getElementById('fname').value;
+                    var lastName = document.getElementById('sname').value;
+                    var email = document.getElementById('email').value;
+                    var password = document.getElementById('passw').value;
+
+                    var userDetails = {
+                        firstName: firstName,
+                        lastName: lastName,
+                        email: email,
+                        password: password
+                    };
+
+                    var userDetailsJSON = JSON.stringify(userDetails);
+
+                    localStorage.setItem('userDetails', userDetailsJSON);
+
+                    alert('User details have been successfully saved in local storage.');
+                }
+                );
+            </script>
+            <a href="pllogin.html">REGISTER</a></button></p>
+
+            <!-- WORKS DO NOT CHANGE ANYTHING ANYMORE-->
+
+</div>
+
+<p><button class="backhome" id="home"><a href="plhome.html">BACK TO HOME</a></button></p>
+
+</body>
+
+</html>
